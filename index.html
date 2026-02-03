@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Nandini Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f4f4f4;
+            --secondary: #1a1a1a;
+            --accent: #ff3366;
+            --text: #e0e0e0;
+            --border: #333333;
+            --bg-dark: #0a0a0a;
+            --card-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 100px;
+            padding: 8rem 4rem 4rem;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 2rem;
+            letter-spacing: -3px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            color: var(--primary);
+        }
+
+        .hero-content h1 span {
+            display: block;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #999;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+        }
+
+        .skill-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+            justify-content: center;
+        }
+
+        .badge {
+            padding: 0.5rem 1.25rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .badge:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 4rem;
+            background: var(--secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Coding Section */
+        .coding {
+            padding: 8rem 4rem;
+            background: var(--bg-dark);
+        }
+
+        .coding-stats {
+            margin-bottom: 4rem;
+        }
+
+        .topics-covered h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .topic-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .topic-tag {
+            padding: 0.75rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .topic-tag:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .platform-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.2);
+        }
+
+        .platform-card a{
+            text-decoration: none;
+            color:#ff3366 ;
+        }
+
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            color: var(--accent);
+        }
+
+        .platform-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .platform-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .platform-stats {
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .platform-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .platform-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+            letter-spacing: -2px;
+            color: var(--primary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            line-height: 1.9;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-item {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .skill-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .skill-item p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 8rem 4rem;
+            background: var(--bg-dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background: var(--card-bg);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 51, 102, 0.2);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: 'VIEW PROJECT';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 2rem;
+            background: var(--card-bg);
+        }
+
+        .project-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border: 1px solid var(--border);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .project-content p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 4rem;
+            background: var(--secondary);
+            color: var(--primary);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact .section-title {
+            color: var(--primary);
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            color: #999;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            color: var(--bg-dark);
+            background: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem;
+                margin-top: 80px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about, .coding, .projects, .contact {
+                padding: 4rem 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NG.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#coding">Coding</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Computer Science
+                <span>Student</span>
+                & Developer
+            </h1>
+            <p>
+                Passionate BTech student specializing in web development and machine learning. 
+                I build innovative solutions that blend creativity with technical expertise, 
+                turning ideas into impactful digital experiences.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="skill-badges">
+                <span class="badge">Front-End Development</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">Java</span>
+                <span class="badge">DSA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in-section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Student & Developer</h3>
+                <p>
+                    I'm a Computer Science student at KIET Group of Institutions with a CGPA of 8.66. 
+                    My journey in technology combines hands-on web development with machine learning 
+                    exploration, creating projects that solve real-world problems.
+                </p>
+                <p>
+                    From building responsive web applications to developing healthcare prediction models, 
+                    I'm passionate about leveraging technology to make a positive impact. Beyond coding, 
+                    I express creativity through art, singing, and poetry.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Programming</h4>
+                    <p>C, C++,Java, Python</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Web Development</h4>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Machine Learning</h4>
+                    <p>NumPy, Pandas, Matplotlib, Scikit-learn</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Databases & Tools</h4>
+                    <p>Git, GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Section -->
+    <section class="coding fade-in-section" id="coding">
+        <h2 class="section-title">Competitive Programming</h2>
+        
+        <div class="coding-stats">
+            <div class="topics-covered">
+                <h3>Topics Covered</h3>
+                <div class="topic-tags">
+                    <span class="topic-tag">Data Structures</span>
+                    <span class="topic-tag">Algorithms</span>
+                    <span class="topic-tag">Dynamic Programming</span>
+                    <span class="topic-tag">Graph Theory</span>
+                    <span class="topic-tag">Greedy</span>
+                    <span class="topic-tag">Backtracking</span>
+                    <span class="topic-tag">Trees</span>
+                    <span class="topic-tag">Arrays</span>
+                    <span class="topic-tag">Strings</span>
+                    <span class="topic-tag">Mathematics</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="platforms-grid">
+            <div class="platform-card">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/>
+                    </svg>
+                </div>
+                <h3>LeetCode</h3>
+                <div class="platform-stats">
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Problems Solved</span>
+                    </div>
+                </div>
+                <a href="https://leetcode.com/u/nandini_1811/" target="_blank">View Profile →</a>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.506 0c-1.435 0-2.597 1.162-2.597 2.597 0 1.435 1.162 2.597 2.597 2.597s2.597-1.162 2.597-2.597c0-1.435-1.162-2.597-2.597-2.597zm9.371 9.676c-1.435 0-2.597 1.162-2.597 2.597s1.162 2.597 2.597 2.597c1.435 0 2.597-1.162 2.597-2.597s-1.162-2.597-2.597-2.597zM3.123 9.676c-1.435 0-2.597 1.162-2.597 2.597s1.162 2.597 2.597 2.597 2.597-1.162 2.597-2.597-1.162-2.597-2.597-2.597zm8.383 8.383c-1.435 0-2.597 1.162-2.597 2.597s1.162 2.597 2.597 2.597 2.597-1.162 2.597-2.597-1.162-2.597-2.597-2.597z"/>
+                    </svg>
+                </div>
+                <h3>CodeStudio</h3>
+                <div class="platform-stats">
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Problems Solved</span>
+                    </div>
+                </div>
+                <a href="https://www.naukri.com/code360/profile/ae20e2bb-6002-4a2f-89b5-8eb021cb563a" target="_blank">View Profile →</a>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm0 4.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm6 1.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM6 6c.828 0 1.5.672 1.5 1.5S6.828 9 6 9s-1.5-.672-1.5-1.5S5.172 6 6 6zm12 4.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-12 0c.828 0 1.5.672 1.5 1.5S6.828 13.5 6 13.5s-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm12 4.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-12 0c.828 0 1.5.672 1.5 1.5S6.828 16.5 6 16.5s-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm6 1.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/>
+                    </svg>
+                </div>
+                <h3>GeeksforGeeks</h3>
+                <div class="platform-stats">
+                    <div class="stat">
+                        <span class="stat-number">75+</span>
+                        <span class="stat-label">Problems Solved</span>
+                    </div>
+                </div>
+                <a href="https://www.geeksforgeeks.org/profile/nandinigq194?tab=activity" target="_blank">View Profile →</a>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.48 0l-3.024 3.024h6.048L11.48 0zM8.52 24l2.961-2.961h-5.92L8.52 24zm-5.921-5.921h6.048L5.521 15.04l-2.922 3.039zm12.803 0h6.047l-3.023-3.04-3.024 3.04zM11.48 7.92l-2.88 2.88h5.76l-2.88-2.88zm0 8.16l2.88-2.88H8.6l2.88 2.88z"/>
+                    </svg>
+                </div>
+                <h3>Codeforces</h3>
+                <div class="platform-stats">
+                    <div class="stat">
+                        <!-- <span class="stat-number">50+</span>
+                        <span class="stat-label">Problems Solved</span> -->
+                    </div>
+                </div>
+                <!-- <a href="#" class="platform-link" target="_blank">View Profile →</a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects fade-in-section" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.open('https://github.com/Nandini-1811/weather_app', '_blank')">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="project-content">
+                    <h3>Weather App</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <p>
+                        Real-time weather forecast and wind details. 
+                        Fully responsive and user-friendly interface.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" onclick="window.open('https://github.com/Nandini-1811/healthcare_prediction', '_blank')">
+                <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="project-content">
+                    <h3>Healthcare Disease Prediction</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">ML</span>
+                    </div>
+                    <p>
+                        Machine learning model to predict diabetic disease using patient 
+                        health data. Includes data preprocessing, feature selection, and 
+                        classification algorithms.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" onclick="window.open('https://github.com/Nandini-1811/Amazon-homepage-clone-using-HTML-CSS', '_blank')">
+                <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                <div class="project-content">
+                    <h3>Amazon Clone</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <p>
+                        Pixel-perfect Amazon homepage clone demonstrating strong 
+                        understanding of HTML structure and CSS styling with responsive 
+                        design principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in-section" id="contact">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+        <div class="contact-links">
+            <a href="https://linkedin.com/in/nandini-goel-1811n05" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="https://github.com/Nandini-1811" target="_blank" class="contact-link">GitHub</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=nandinigoel1805@gmail.com" target="_blank" class="contact-link">Email Me</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nandini Goel. Designed & Built with passion.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInSections.forEach(section => {
+            fadeInObserver.observe(section);
+        });
+
+        // Add active class to nav links on scroll
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
