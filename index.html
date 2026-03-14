@@ -29,15 +29,8 @@
       --max-width: 1180px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", sans-serif;
@@ -50,19 +43,14 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(var(--max-width), calc(100% - 2rem));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 6rem 0;
-    }
+    .section { padding: 6rem 0; }
 
     .section-header {
       margin-bottom: 2.5rem;
@@ -131,9 +119,7 @@
       letter-spacing: -0.04em;
     }
 
-    .logo span {
-      color: var(--accent);
-    }
+    .logo span { color: var(--accent); }
 
     .nav-links {
       display: flex;
@@ -151,10 +137,7 @@
       padding: 0.2rem 0;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
     .nav-links a::after {
       content: "";
@@ -167,10 +150,7 @@
       transition: width 0.25s ease;
     }
 
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
     /* HERO */
     .hero {
@@ -187,9 +167,7 @@
       align-items: center;
     }
 
-    .hero-copy {
-      max-width: 720px;
-    }
+    .hero-copy { max-width: 720px; }
 
     .hero-badge {
       display: inline-flex;
@@ -327,23 +305,9 @@
       margin-bottom: 1rem;
     }
 
-    .mini-label {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .mini-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .mini-muted {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
+    .mini-label { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.45rem; }
+    .mini-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .mini-muted { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
 
     .mini-stats {
       display: grid;
@@ -358,16 +322,8 @@
       padding: 1rem;
     }
 
-    .stat-number {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-text {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .stat-number { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.2rem; }
+    .stat-text { color: var(--muted); font-size: 0.9rem; }
 
     /* ABOUT */
     .about-grid {
@@ -405,15 +361,74 @@
       padding: 1.1rem;
     }
 
-    .info-item h4 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
+    .info-item h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .info-item p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+
+    /* INTERNSHIP */
+    .internship-card {
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.08), rgba(255, 77, 126, 0.06));
+      border: 1px solid rgba(124, 92, 255, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow);
     }
 
-    .info-item p {
+    .internship-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .internship-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .internship-company {
+      color: var(--accent-2);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .internship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(79, 209, 165, 0.1);
+      border: 1px solid rgba(79, 209, 165, 0.25);
+      color: var(--success);
+      font-size: 0.84rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .internship-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .internship-bullets li {
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
+      font-size: 0.97rem;
+      line-height: 1.75;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .internship-bullets li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-2);
+      font-size: 0.85rem;
     }
 
     /* CODING */
@@ -454,28 +469,10 @@
       border-color: rgba(255, 77, 126, 0.35);
     }
 
-    .platform-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .platform-metric {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
-    .platform-note {
-      color: var(--muted);
-      margin-bottom: 1rem;
-      font-size: 0.92rem;
-    }
-
-    .platform-link {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.94rem;
-    }
+    .platform-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+    .platform-metric { font-size: 2rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .platform-note { color: var(--muted); margin-bottom: 1rem; font-size: 0.92rem; }
+    .platform-link { color: var(--accent); font-weight: 700; font-size: 0.94rem; }
 
     /* PROJECTS */
     .projects-grid {
@@ -581,9 +578,7 @@
       transition: 0.25s ease;
     }
 
-    .project-btn:hover {
-      transform: translateY(-2px);
-    }
+    .project-btn:hover { transform: translateY(-2px); }
 
     .project-btn.primary {
       background: linear-gradient(135deg, var(--accent), #ff6b96);
@@ -591,8 +586,47 @@
       box-shadow: 0 12px 24px rgba(255, 77, 126, 0.22);
     }
 
-    .project-btn.secondary:hover {
-      background: rgba(255,255,255,0.08);
+    .project-btn.secondary:hover { background: rgba(255,255,255,0.08); }
+
+    /* CERTIFICATIONS */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .cert-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.4rem;
+      transition: 0.25s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 92, 255, 0.35);
+    }
+
+    .cert-issuer {
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-name {
+      font-size: 0.97rem;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-date {
+      color: var(--muted);
+      font-size: 0.84rem;
     }
 
     /* CONTACT */
@@ -615,17 +649,9 @@
       margin-bottom: 0.75rem;
     }
 
-    .contact-copy p {
-      color: var(--muted);
-      max-width: 620px;
-      line-height: 1.85;
-    }
+    .contact-copy p { color: var(--muted); max-width: 620px; line-height: 1.85; }
 
-    .contact-actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
+    .contact-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 
     /* FOOTER */
     .footer {
@@ -642,69 +668,31 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .fade-in-section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .hero-grid,
-      .about-grid,
-      .projects-grid,
-      .platform-grid {
+      .hero-grid, .about-grid, .projects-grid, .platform-grid, .certs-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero {
-        min-height: auto;
-        padding-top: 4rem;
-      }
-
-      .hero-copy {
-        max-width: none;
-      }
+      .hero { min-height: auto; padding-top: 4rem; }
+      .hero-copy { max-width: none; }
     }
 
     @media (max-width: 768px) {
-      .section {
-        padding: 4.5rem 0;
-      }
+      .section { padding: 4.5rem 0; }
+      .nav-inner { padding: 0.2rem 0; }
+      .nav-links { gap: 0.9rem; }
+      .section-subtitle, .hero-text, .about-text p, .contact-copy p { font-size: 0.98rem; }
+      .info-grid, .mini-stats { grid-template-columns: 1fr; }
+      .contact-card { align-items: flex-start; }
+      .btn, .project-btn { width: 100%; }
+      .hero-actions, .project-actions, .contact-actions { width: 100%; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-      .nav-inner {
-        padding: 0.2rem 0;
-      }
-
-      .nav-links {
-        gap: 0.9rem;
-      }
-
-      .section-subtitle,
-      .hero-text,
-      .about-text p,
-      .contact-copy p {
-        font-size: 0.98rem;
-      }
-
-      .info-grid,
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        align-items: flex-start;
-      }
-
-      .btn,
-      .project-btn {
-        width: 100%;
-      }
-
-      .hero-actions,
-      .project-actions,
-      .contact-actions {
-        width: 100%;
-      }
+    @media (max-width: 480px) {
+      .certs-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -712,35 +700,38 @@
   <header class="navbar">
     <div class="nav-inner">
       <div class="logo">N<span>G.</span></div>
-
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#internship">Experience</a></li>
         <li><a href="#coding">Coding</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            Frontend & Full-Stack Developer
+            Frontend &amp; Full-Stack Developer
           </div>
 
           <h1 class="hero-title">
             Building modern
             <span class="accent">web experiences</span>
-            with code & creativity
+            with code &amp; creativity
           </h1>
 
           <p class="hero-text">
-            I’m Nandini Goel, a Computer Science student passionate about frontend and full-stack web development.
-            I enjoy creating responsive, user-focused applications using React, Node.js, Express, and MongoDB,
-            while also exploring machine learning and problem solving through DSA.
+            I'm Nandini Goel, a Computer Science student and ML intern passionate about frontend
+            and full-stack web development. I build responsive, user-focused applications using
+            React, Node.js, Express, and MongoDB, while exploring machine learning and problem
+            solving through DSA.
           </p>
 
           <div class="hero-actions">
@@ -752,6 +743,7 @@
             <span class="chip">React.js</span>
             <span class="chip">MERN Stack</span>
             <span class="chip">Machine Learning</span>
+            <span class="chip">AWS Certified</span>
             <span class="chip">DSA</span>
           </div>
         </div>
@@ -759,7 +751,7 @@
         <div class="hero-card">
           <div class="mini-panel">
             <div class="mini-label">Currently Focused On</div>
-            <div class="mini-title">Frontend development, full-stack projects, and internship-ready products</div>
+            <div class="mini-title">Full-stack projects, ML applications, and open to opportunities</div>
             <div class="mini-muted">
               Building practical web applications with strong UI, clean project structure, and real-world usability.
             </div>
@@ -767,11 +759,11 @@
 
           <div class="mini-stats">
             <div class="stat-card">
-              <div class="stat-number">3+</div>
-              <div class="stat-text">Portfolio-ready projects</div>
+              <div class="stat-number">5+</div>
+              <div class="stat-text">Projects built</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">8.66</div>
+              <div class="stat-number">8.67</div>
               <div class="stat-text">Current CGPA</div>
             </div>
             <div class="stat-card">
@@ -779,21 +771,22 @@
               <div class="stat-text">LeetCode problems</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">MERN</div>
-              <div class="stat-text">Primary stack</div>
+              <div class="stat-number">6</div>
+              <div class="stat-text">Certifications</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section fade-in-section">
       <div class="container">
         <div class="section-header">
           <div class="eyebrow">About Me</div>
           <h2 class="section-title">Student, builder, and problem solver</h2>
           <p class="section-subtitle">
-            I’m a Computer Science student at KIET Group of Institutions with a strong interest in web development,
+            I'm a Computer Science student at KIET Group of Institutions with a strong interest in web development,
             modern frontend design, and building applications that solve practical problems.
           </p>
         </div>
@@ -801,15 +794,17 @@
         <div class="about-grid">
           <div class="glass-card about-text">
             <p>
-              My journey in technology combines hands-on project development with continuous learning.
-              I enjoy transforming ideas into interactive digital products that are clean, responsive, and user-friendly.
+              My journey in technology combines hands-on project development and real-world internship
+              experience with continuous learning. I enjoy transforming ideas into interactive digital
+              products that are clean, responsive, and user-friendly.
             </p>
             <p>
               Along with web development, I actively practice data structures and algorithms to strengthen my
-              problem-solving skills. I also explore machine learning through beginner-friendly prediction systems.
+              problem-solving skills. I also explore machine learning — including work done during my ML
+              internship at Navodita Infotech — and enjoy building prediction systems and data-driven apps.
             </p>
             <p>
-              Beyond technology, I’m creative by nature and enjoy art, singing, and poetry, which also influence
+              Beyond technology, I'm creative by nature and enjoy art, singing, and poetry, which also influence
               how I think about design and user experience.
             </p>
           </div>
@@ -818,22 +813,19 @@
             <div class="info-grid">
               <div class="info-item">
                 <h4>Programming</h4>
-                <p>C, C++, Java, Python</p>
+                <p>C, C++, Java, Python, JavaScript</p>
               </div>
-
               <div class="info-item">
                 <h4>Frontend</h4>
-                <p>HTML, CSS, JavaScript, React.js, Tailwind CSS</p>
+                <p>HTML, CSS, React.js, Tailwind CSS</p>
               </div>
-
               <div class="info-item">
-                <h4>Backend</h4>
-                <p>Node.js, Express.js, REST APIs, MongoDB</p>
+                <h4>Backend &amp; DB</h4>
+                <p>Node.js, Express.js, MongoDB, MySQL, Oracle</p>
               </div>
-
               <div class="info-item">
                 <h4>Other Skills</h4>
-                <p>Git, GitHub, Scikit-learn, NumPy, Pandas, DSA</p>
+                <p>Git, GitHub, Scikit-learn, NumPy, Pandas, DSA, AWS</p>
               </div>
             </div>
           </div>
@@ -841,6 +833,38 @@
       </div>
     </section>
 
+    <!-- INTERNSHIP EXPERIENCE -->
+    <section id="internship" class="section fade-in-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Experience</div>
+          <h2 class="section-title">Internship &amp; work experience</h2>
+          <p class="section-subtitle">
+            Real-world experience that complements my academic and project work.
+          </p>
+        </div>
+
+        <div class="internship-card">
+          <div class="internship-header">
+            <div>
+              <div class="internship-role">Machine Learning Intern</div>
+              <div class="internship-company">Navodita Infotech</div>
+            </div>
+            <div class="internship-badge">
+              &#x2022; Aug 2025 – Sep 2025
+            </div>
+          </div>
+          <ul class="internship-bullets">
+            <li>Developed a healthcare prediction web application using Python, Scikit-learn, and Streamlit to predict patient health outcomes from medical data.</li>
+            <li>Applied end-to-end machine learning workflow including data preprocessing, feature engineering, model training, evaluation, and deployment.</li>
+            <li>Built an interactive Streamlit UI enabling real-time predictions and data visualization for non-technical users.</li>
+            <li>Extended the project into a Diabetes Prediction Web App, refining model accuracy and expanding the prediction scope.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODING -->
     <section id="coding" class="section fade-in-section">
       <div class="container">
         <div class="section-header">
@@ -872,14 +896,12 @@
             <div class="platform-note">Problems solved across core DSA topics</div>
             <a class="platform-link" href="https://leetcode.com/u/nandini_1811/" target="_blank">View Profile →</a>
           </div>
-
           <div class="platform-card">
             <h3>CodeStudio</h3>
             <div class="platform-metric">20+</div>
             <div class="platform-note">Practice focused on foundations and structured learning</div>
             <a class="platform-link" href="https://www.naukri.com/code360/profile/ae20e2bb-6002-4a2f-89b5-8eb021cb563a" target="_blank">View Profile →</a>
           </div>
-
           <div class="platform-card">
             <h3>GeeksforGeeks</h3>
             <div class="platform-metric">75+</div>
@@ -890,6 +912,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section fade-in-section">
       <div class="container">
         <div class="section-header">
@@ -902,11 +925,11 @@
         </div>
 
         <div class="projects-grid">
+          <!-- Suhana Safar -->
           <article class="project-card">
             <div class="project-top" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);"></div>
             <div class="project-body">
               <h3>Suhana Safar</h3>
-
               <div class="tags">
                 <span class="tag">React</span>
                 <span class="tag">Tailwind CSS</span>
@@ -914,13 +937,11 @@
                 <span class="tag">Express</span>
                 <span class="tag">MongoDB</span>
               </div>
-
               <p>
                 A full-stack smart transport management system featuring real-time bus tracking,
                 seat booking, emergency alerts, chatbot support, contact management, passenger feedback,
-                and secure authentication.
+                and secure JWT-based authentication.
               </p>
-
               <div class="project-actions">
                 <a class="project-btn primary" href="https://suhana-safar.vercel.app/" target="_blank">Live Demo</a>
                 <a class="project-btn secondary" href="https://github.com/Nandini-1811/Suhana_Safar" target="_blank">GitHub</a>
@@ -928,47 +949,91 @@
             </div>
           </article>
 
+          <!-- Employee Dashboard -->
           <article class="project-card">
-            <div class="project-top" style="background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);"></div>
+            <div class="project-top" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);"></div>
             <div class="project-body">
-              <h3>React Password Generator</h3>
-
+              <h3>Employee Management Dashboard</h3>
               <div class="tags">
-                <span class="tag">React</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">CSS</span>
+                <span class="tag">React 18</span>
+                <span class="tag">React Router</span>
+                <span class="tag">Recharts</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Camera API</span>
               </div>
-
               <p>
-                A responsive password generator that creates secure passwords with customizable options
-                such as length, numbers, and special characters, including copy-to-clipboard functionality.
+                A multi-screen React dashboard with authentication guard, searchable employee list,
+                salary charts using Recharts, live camera capture via the browser MediaDevices API,
+                and graceful API fallback handling.
               </p>
-
               <div class="project-actions">
-                <a class="project-btn secondary" href="https://github.com/Nandini-1811/password-generator" target="_blank">GitHub</a>
+                <a class="project-btn primary" href="https://employee-management-dashboard-eta-livid.vercel.app/" target="_blank">Live Demo</a>
+                <a class="project-btn secondary" href="https://github.com/Nandini-1811/employee-management-dashboard" target="_blank">GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- Diabetes Prediction -->
           <article class="project-card">
             <div class="project-top" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);"></div>
             <div class="project-body">
               <h3>Diabetes Prediction Web App</h3>
-
               <div class="tags">
                 <span class="tag">Python</span>
                 <span class="tag">Streamlit</span>
                 <span class="tag">Scikit-learn</span>
                 <span class="tag">ML</span>
               </div>
-
               <p>
                 A machine learning web application that predicts diabetes likelihood using patient health inputs
-                such as glucose, BMI, insulin, and age through a simple interactive interface.
+                such as glucose, BMI, insulin, and age through a simple interactive interface. Built during
+                ML internship at Navodita Infotech.
               </p>
-
               <div class="project-actions">
                 <a class="project-btn secondary" href="https://github.com/Nandini-1811/healthcare_prediction" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Password Generator -->
+          <article class="project-card">
+            <div class="project-top" style="background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);"></div>
+            <div class="project-body">
+              <h3>React Password Generator</h3>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS</span>
+                <span class="tag">React Hooks</span>
+              </div>
+              <p>
+                A responsive password generator that creates secure passwords with customizable options
+                such as length, numbers, and special characters, including copy-to-clipboard functionality
+                built with React Hooks.
+              </p>
+              <div class="project-actions">
+                <a class="project-btn secondary" href="https://github.com/Nandini-1811/password-generator" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Student Management System -->
+          <article class="project-card">
+            <div class="project-top" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+            <div class="project-body">
+              <h3>Student Management System</h3>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">SQL</span>
+                <span class="tag">CRUD</span>
+              </div>
+              <p>
+                A CLI-based student management system using Python and MySQL with relational database design,
+                normalized schema, foreign key relationships, JOIN queries, and transaction handling.
+              </p>
+              <div class="project-actions">
+                <a class="project-btn secondary" href="https://github.com/Nandini-1811/student-management-system" target="_blank">GitHub</a>
               </div>
             </div>
           </article>
@@ -976,19 +1041,65 @@
       </div>
     </section>
 
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section fade-in-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Certifications</div>
+          <h2 class="section-title">Credentials &amp; course completions</h2>
+          <p class="section-subtitle">
+            Verified certifications from globally recognized platforms and companies.
+          </p>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-issuer">Amazon Web Services</div>
+            <div class="cert-name">AWS Cloud Quest: Cloud Practitioner Trained</div>
+            <div class="cert-date">Jan 2026</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Oracle Academy</div>
+            <div class="cert-name">Database Programming with SQL</div>
+            <div class="cert-date">Dec 2025</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Cisco Networking Academy</div>
+            <div class="cert-name">Data Analytics Essentials</div>
+            <div class="cert-date">Nov 2025</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-name">Introduction to AI · Deep Learning · NLP · NoSQL / MongoDB</div>
+            <div class="cert-date">Feb – Nov 2025</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Walmart Global Tech · Forage</div>
+            <div class="cert-name">Advanced Software Engineering Job Simulation</div>
+            <div class="cert-date">Jan 2026</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer">Deloitte Australia · Forage</div>
+            <div class="cert-name">Data Analytics Job Simulation</div>
+            <div class="cert-date">2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="section fade-in-section">
       <div class="container">
         <div class="contact-card">
           <div class="contact-copy">
-            <h3>Let’s connect</h3>
+            <h3>Let's connect</h3>
             <p>
-              I’m currently open to frontend and web development internship opportunities,
+              I'm currently open to frontend, full-stack, and web development opportunities,
               collaborations, and conversations around projects, learning, and technology.
             </p>
           </div>
-
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://linkedin.com/in/nandini-goel-1811n05" target="_blank">LinkedIn</a>
+            <a class="btn btn-primary" href="https://linkedin.com/in/nandinigoel18" target="_blank">LinkedIn</a>
             <a class="btn btn-secondary" href="https://github.com/Nandini-1811" target="_blank">GitHub</a>
             <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&to=nandinigoel1805@gmail.com" target="_blank">Email Me</a>
           </div>
@@ -1008,25 +1119,19 @@
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
     const fadeInSections = document.querySelectorAll(".fade-in-section");
-
     const fadeInObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
         });
       },
       { threshold: 0.12 }
     );
-
     fadeInSections.forEach((section) => fadeInObserver.observe(section));
 
     const sections = document.querySelectorAll("section[id]");
@@ -1034,21 +1139,14 @@
 
     window.addEventListener("scroll", () => {
       let current = "";
-
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (window.scrollY >= sectionTop - 180) {
+        if (window.scrollY >= section.offsetTop - 180) {
           current = section.getAttribute("id");
         }
       });
-
       navLinks.forEach((link) => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
+        if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
       });
     });
   </script>
